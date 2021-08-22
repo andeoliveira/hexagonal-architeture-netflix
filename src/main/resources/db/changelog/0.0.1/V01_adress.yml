@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: createSequence-adress
+      author: andeoliveira
+      changes:
+        - createSequence:
+            sequenceName: adress_sequence
+            incrementBy: 1
+            startValue: 1
+  - changeSet:
+      id: create-table-adress
+      author: andeoliveira
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: adress
+      changes:
+        - createTable:
+            tableName: adress
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: adress_pk
+                  name: id
+                  type: bigint
+              - column:
+                  constraints:
+                    nullable: false
+                  name: zip_code
+                  type: integer(8)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: street
+                  type: varchar(200)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: district
+                  type: varchar(200)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: city
+                  type: varchar(200)

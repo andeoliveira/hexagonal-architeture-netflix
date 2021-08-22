@@ -1,56 +1,48 @@
 databaseChangeLog:
   - changeSet:
-      id: createSequence-bank_account
+      id: createSequence-adress_person
       author: andeoliveira
       changes:
         - createSequence:
-            sequenceName: bank_account_sequence
+            sequenceName: adress_person_sequence
             incrementBy: 1
             startValue: 1
   - changeSet:
-      id: create-table-bank_account
+      id: create-table-adress_person
       author: andeoliveira
       preConditions:
         - onFail: MARK_RAN
           not:
             tableExists:
-              tableName: bank_account
+              tableName: adress_person
       changes:
         - createTable:
-            tableName: bank_account
+            tableName: adress_person
             columns:
               - column:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: bank_account_pk
+                    primaryKeyName: adress_person_pk
                   name: id
                   type: bigint
               - column:
                   constraints:
                     nullable: false
-                  name: date_register
+                  name: register_date
                   type: datetime
               - column:
                   constraints:
-                    nullable: false
-                  name: account_type
-                  type: varchar(36)
+                    nullable: true
+                    foreignKeyName: fk_person_id
+                    references: person(id)
+                  name: person_id
+                  type: bigint
               - column:
                   constraints:
                     nullable: true
-                  name: agency
-                  type: int(4)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: number
-                  type: int(20)
-              - column:
-                  constraints:
-                    nullable: true
-                    foreignKeyName: fk_client_id
-                    references: client(id)
-                  name: client_id
+                    foreignKeyName: fk_adress_id
+                    references: adress(id)
+                  name: adress_id
                   type: bigint
 

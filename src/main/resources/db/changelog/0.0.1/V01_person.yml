@@ -1,35 +1,35 @@
 databaseChangeLog:
   - changeSet:
-      id: createSequence-client
+      id: createSequence-person
       author: andeoliveira
       changes:
         - createSequence:
-            sequenceName: client_sequence
+            sequenceName: person_sequence
             incrementBy: 1
             startValue: 1
   - changeSet:
-      id: create-table-client
+      id: create-table-person
       author: andeoliveira
       preConditions:
         - onFail: MARK_RAN
           not:
             tableExists:
-              tableName: client
+              tableName: person
       changes:
         - createTable:
-            tableName: client
+            tableName: person
             columns:
               - column:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: client_pk
+                    primaryKeyName: person_pk
                   name: id
                   type: bigint
               - column:
                   constraints:
                     nullable: false
-                  name: date_register
+                  name: register_date
                   type: datetime
               - column:
                   constraints:
