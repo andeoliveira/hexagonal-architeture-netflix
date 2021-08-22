@@ -1,29 +1,29 @@
 databaseChangeLog:
   - changeSet:
-      id: createSequence-account_bank
+      id: createSequence-bank_account
       author: andeoliveira
       changes:
         - createSequence:
-            sequenceName: account_bank_sequence
+            sequenceName: bank_account_sequence
             incrementBy: 1
             startValue: 1
   - changeSet:
-      id: create-table-account_bank
+      id: create-table-bank_account
       author: andeoliveira
       preConditions:
         - onFail: MARK_RAN
           not:
             tableExists:
-              tableName: account_bank
+              tableName: bank_account
       changes:
         - createTable:
-            tableName: account_bank
+            tableName: bank_account
             columns:
               - column:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: account_bank_pk
+                    primaryKeyName: bank_account_pk
                   name: id
                   type: bigint
               - column:
@@ -34,7 +34,7 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
-                  name: type_account
+                  name: account_type
                   type: varchar(36)
               - column:
                   constraints:
