@@ -1,42 +1,37 @@
 databaseChangeLog:
   - changeSet:
-      id: createSequence-adress_person
+      id: createSequence-customer_adress
       author: andeoliveira
       changes:
         - createSequence:
-            sequenceName: adress_person_sequence
+            sequenceName: customer_adress_sequence
             incrementBy: 1
             startValue: 1
   - changeSet:
-      id: create-table-adress_person
+      id: create-table-customer_adress
       author: andeoliveira
       preConditions:
         - onFail: MARK_RAN
           not:
             tableExists:
-              tableName: adress_person
+              tableName: customer_adress
       changes:
         - createTable:
-            tableName: adress_person
+            tableName: customer_adress
             columns:
               - column:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: adress_person_pk
+                    primaryKeyName: customer_adress_pk
                   name: id
                   type: bigint
               - column:
                   constraints:
                     nullable: false
-                  name: register_date
-                  type: datetime
-              - column:
-                  constraints:
-                    nullable: true
-                    foreignKeyName: fk_person_id
-                    references: person(id)
-                  name: person_id
+                    foreignKeyName: fk_customer_id
+                    references: customer(id)
+                  name: customer_id
                   type: bigint
               - column:
                   constraints:
@@ -45,4 +40,3 @@ databaseChangeLog:
                     references: adress(id)
                   name: adress_id
                   type: bigint
-

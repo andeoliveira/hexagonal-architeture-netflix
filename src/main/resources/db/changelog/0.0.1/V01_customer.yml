@@ -1,48 +1,43 @@
 databaseChangeLog:
   - changeSet:
-      id: createSequence-person
+      id: createSequence-customer
       author: andeoliveira
       changes:
         - createSequence:
-            sequenceName: person_sequence
+            sequenceName: customer_sequence
             incrementBy: 1
             startValue: 1
   - changeSet:
-      id: create-table-person
+      id: create-table-customer
       author: andeoliveira
       preConditions:
         - onFail: MARK_RAN
           not:
             tableExists:
-              tableName: person
+              tableName: customer
       changes:
         - createTable:
-            tableName: person
+            tableName: customer
             columns:
               - column:
                   constraints:
                     nullable: false
                     primaryKey: true
-                    primaryKeyName: person_pk
+                    primaryKeyName: customer_pk
                   name: id
                   type: bigint
               - column:
                   constraints:
                     nullable: false
-                  name: register_date
-                  type: datetime
-              - column:
-                  constraints:
-                    nullable: false
                   name: first_name
-                  type: varchar(80)
+                  type: varchar(60)
               - column:
                   constraints:
                     nullable: false
                   name: last_name
-                  type: varchar(80)
+                  type: varchar(60)
               - column:
                   constraints:
                     nullable: false
-                  name: cpf
-                  type: int(11)
+                  name: date_register
+                  type: datetime

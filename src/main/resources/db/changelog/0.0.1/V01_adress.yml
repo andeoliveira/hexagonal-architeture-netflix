@@ -30,19 +30,9 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: zip_code
-                  type: integer(8)
+                  type: varchar(8)
               - column:
                   constraints:
-                    nullable: true
+                    nullable: false
                   name: street
-                  type: varchar(200)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: district
-                  type: varchar(200)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: city
-                  type: varchar(200)
+                  type: varchar(60)

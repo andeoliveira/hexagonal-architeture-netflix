@@ -1,7 +1,7 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/0.0.1/V01_person.yml
+      file: db/changelog/0.0.1/V01_customer.yml
   - include:
       file: db/changelog/0.0.1/V01_adress.yml
   - include:
-      file: db/changelog/0.0.1/V01_adress_person.yml
+      file: db/changelog/0.0.1/V01_customer_adress.yml
