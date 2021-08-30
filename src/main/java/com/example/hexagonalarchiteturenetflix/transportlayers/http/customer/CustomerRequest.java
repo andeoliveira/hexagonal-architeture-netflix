@@ -1,10 +1,6 @@
-package com.example.hexagonalarchiteturenetflix.entities.customer;
+package com.example.hexagonalarchiteturenetflix.transportlayers.http.customer;
 
-import java.time.LocalDateTime;
-
-public class Customer {
-
-    private Long id;
+public class CustomerRequest {
 
     private String firstName;
 
@@ -12,9 +8,9 @@ public class Customer {
 
     private Integer age;
 
-    private CustomerStatusEnum status;
+    private String zipCode;
 
-    private LocalDateTime registerDate;
+    private String street;
 
     public String getFirstName() {
         return firstName;
@@ -32,15 +28,27 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public LocalDateTime getRegisterDate() {
-        return registerDate;
-    }
-
     public Integer getAge() {
         return age;
     }
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 }
