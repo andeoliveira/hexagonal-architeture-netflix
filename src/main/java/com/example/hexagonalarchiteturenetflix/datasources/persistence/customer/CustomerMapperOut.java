@@ -5,9 +5,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
-public interface CustomerMapper {
+public interface CustomerMapperOut {
 
-    CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
+    CustomerMapperOut INSTANCE = Mappers.getMapper(CustomerMapperOut.class);
+
 
     Customer customerEntityToCustomer(CustomerEntity customerEntity);
 

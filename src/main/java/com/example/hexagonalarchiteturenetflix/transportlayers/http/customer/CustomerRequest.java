@@ -6,7 +6,7 @@ public class CustomerRequest {
 
     private String lastName;
 
-    private Integer age;
+    private String birthDate;
 
     private String zipCode;
 
@@ -28,14 +28,6 @@ public class CustomerRequest {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public String getZipCode() {
         return zipCode;
     }
@@ -51,4 +43,5 @@ public class CustomerRequest {
     public void setStreet(String street) {
         this.street = street;
     }
+
 }

@@ -2,14 +2,19 @@ package com.example.hexagonalarchiteturenetflix.datasources.persistence.adress;
 
 import com.example.hexagonalarchiteturenetflix.entities.adress.Adress;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 @Mapper
-public interface AdressMapper {
+public interface AdressMapperOut {
 
-    AdressMapper INSTANCE = Mappers.getMapper(AdressMapper.class);
+    AdressMapperOut INSTANCE = Mappers.getMapper(AdressMapperOut.class);
 
     Adress adressEntityToAdress(AdressEntity adressEntity);
 
+    @Mapping(target = "street", source = "adress.street")
+    @Mapping(target = "zipCode", source = "adress.zipCode")
+    @Mapping(target = "id", ignore = true)
     AdressEntity adressToAdressEntity(Adress adress);
+
 }

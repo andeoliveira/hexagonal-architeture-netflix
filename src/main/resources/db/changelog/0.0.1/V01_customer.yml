@@ -39,5 +39,10 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
-                  name: date_register
+                  name: birth_date
+                  type: date
+              - column:
+                  constraints:
+                    nullable: false
+                  name: register_date
                   type: datetime

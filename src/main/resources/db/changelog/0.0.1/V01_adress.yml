@@ -30,7 +30,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: zip_code
-                  type: varchar(8)
+                  type: varchar(9)
               - column:
                   constraints:
                     nullable: false

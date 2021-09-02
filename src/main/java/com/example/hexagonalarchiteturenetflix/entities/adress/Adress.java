@@ -1,24 +1,25 @@
 package com.example.hexagonalarchiteturenetflix.entities.adress;
 
+import com.example.hexagonalarchiteturenetflix.entities.adress.valuesobjects.ZipCode;
+
 public class Adress {
 
-    private String zipCode;
+    private ZipCode zipCode;
 
     private String street;
 
-    public String getZipCode() {
-        return zipCode;
-    }
+    public Adress(String zipCode, String street) {
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+        this.zipCode = new ZipCode(zipCode);
+        this.street = street;
+
     }
 
     public String getStreet() {
         return street;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public String getZipCode() {
+        return zipCode.getValue();
     }
 }

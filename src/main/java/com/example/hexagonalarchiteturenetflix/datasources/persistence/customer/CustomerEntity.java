@@ -1,6 +1,7 @@
 package com.example.hexagonalarchiteturenetflix.datasources.persistence.customer;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,6 +19,10 @@ public class CustomerEntity {
     @Column(name = "last_name", nullable = false, length = 60)
     private String lastName;
 
+    @Column(name = "birthDate", nullable = false)
+    private LocalDate birthDate;
+
     @Column(name = "register_date", nullable = false)
     private LocalDateTime registerDate;
+
 }

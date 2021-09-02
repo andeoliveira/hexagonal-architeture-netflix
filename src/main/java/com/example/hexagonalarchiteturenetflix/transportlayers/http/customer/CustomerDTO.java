@@ -4,4 +4,7 @@ public class CustomerDTO {
 
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
 }
