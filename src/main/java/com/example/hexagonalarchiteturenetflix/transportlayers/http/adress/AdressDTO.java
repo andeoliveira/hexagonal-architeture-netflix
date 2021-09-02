@@ -2,10 +2,23 @@ package com.example.hexagonalarchiteturenetflix.transportlayers.http.adress;
 
 public class AdressDTO {
 
-    private Long id;
+    private String zipCode;
 
-    public Long getId() {
-        return id;
+    private String street;
+
+    public String getZipCode() {
+        return zipCode;
     }
 
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
 }

@@ -18,10 +18,10 @@ public class AdressUseCase {
         return this.adressRepository.create(adress);
     }
 
-    public Adress getAdressByZipCode(String zipCode) {
+    public Adress getAdressByZipCodeAndStreet(String zipCode, String street) {
 
-        return this.adressRepository.getAdressByZipCode(zipCode)
-                .orElseThrow(() -> new AdressNotFoundException("Endereço não encontrado."));
+        return this.adressRepository.getAdressByZipCodeAndStreet(zipCode, street)
+                .orElseThrow(() -> new AdressNotFoundException());
 
     }
 }

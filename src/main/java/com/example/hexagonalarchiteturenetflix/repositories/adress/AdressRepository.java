@@ -8,5 +8,5 @@ public interface AdressRepository {
 
     Adress create(Adress adress);
 
-    Optional<Adress> getAdressByZipCode(String zipCode);
+    Optional<Adress> getAdressByZipCodeAndStreet(String zipCode, String street);
 }

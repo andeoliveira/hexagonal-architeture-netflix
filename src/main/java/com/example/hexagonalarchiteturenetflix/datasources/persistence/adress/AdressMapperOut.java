@@ -10,7 +10,8 @@ public interface AdressMapperOut {
 
     AdressMapperOut INSTANCE = Mappers.getMapper(AdressMapperOut.class);
 
-    Adress adressEntityToAdress(AdressEntity adressEntity);
+
+    Adress map(AdressEntity adressEntity);
 
     @Mapping(target = "street", source = "adress.street")
     @Mapping(target = "zipCode", source = "adress.zipCode")

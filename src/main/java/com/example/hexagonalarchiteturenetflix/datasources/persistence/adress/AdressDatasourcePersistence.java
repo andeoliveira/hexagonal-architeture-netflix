@@ -15,17 +15,27 @@ public class AdressDatasourcePersistence implements AdressRepository {
 
     @Override
     public Adress create(Adress adress) {
+
         var adressEntity = AdressMapperOut.INSTANCE.adressToAdressEntity(adress);
-        var adressCreated = adressJpaRepository.save(adressEntity);
-        return AdressMapperOut.INSTANCE.adressEntityToAdress(adressCreated);
+
+        var adressBD = adressJpaRepository.findByZipCodeAndStreet(adress.getZipCode(), adress.getStreet());
+        if (adressBD.isPresent()) {
+            adressEntity.setId(adressBD.get().getId());
+            adressEntity.setStreet(adress.getStreet());
+        }
+
+        return AdressMapperOut.INSTANCE.map(
+                adressJpaRepository.save(adressEntity)
+        );
+
     }
 
     @Override
-    public Optional<Adress> getAdressByZipCode(String zipCode) {
+    public Optional<Adress> getAdressByZipCodeAndStreet(String zipCode, String street) {
 
         return Optional.ofNullable(
-            AdressMapperOut.INSTANCE.adressEntityToAdress(
-                    adressJpaRepository.findByZipCode(zipCode).orElse(null)
+            AdressMapperOut.INSTANCE.map(
+                    adressJpaRepository.findByZipCodeAndStreet(zipCode, street).orElse(null)
             )
 
         );

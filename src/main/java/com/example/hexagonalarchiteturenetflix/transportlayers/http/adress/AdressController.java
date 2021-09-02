@@ -16,11 +16,12 @@ public class AdressController {
     @Autowired
     AdressUseCase adressUseCase;
 
-    @GetMapping("/{zipcode}")
-    public ResponseEntity<AdressDTO> getAdressByZipCode(@PathVariable String zipcode) {
+    @GetMapping("/{zipcode}/{street}")
+    public ResponseEntity<AdressDTO> getAdressByZipCodeAndStreet(
+            @PathVariable String zipcode, @PathVariable String street) {
         return ResponseEntity.ok(
                 AdressMapperIn.INSTANCE.adressToAdressDTO(
-                        adressUseCase.getAdressByZipCode(zipcode)
+                        adressUseCase.getAdressByZipCodeAndStreet(zipcode, street)
                 )
         );
     }
