@@ -34,9 +34,9 @@ public class AdressDatasourcePersistence implements AdressRepository {
     public Optional<Adress> getAdressByZipCodeAndStreet(String zipCode, String street) {
 
         return Optional.ofNullable(
-            AdressMapperOut.INSTANCE.map(
-                    adressJpaRepository.findByZipCodeAndStreet(zipCode, street).orElse(null)
-            )
+                AdressMapperOut.INSTANCE.map(
+                        adressJpaRepository.findByZipCodeAndStreet(zipCode, street).orElse(null)
+                )
 
         );
 

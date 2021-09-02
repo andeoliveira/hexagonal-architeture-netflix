@@ -1,6 +1,5 @@
 package com.example.hexagonalarchiteturenetflix.transportlayers.http.adress;
 
-import com.example.hexagonalarchiteturenetflix.entities.adress.Adress;
 import com.example.hexagonalarchiteturenetflix.interactors.adress.AdressUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
