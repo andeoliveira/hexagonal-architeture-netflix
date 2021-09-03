@@ -23,10 +23,10 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<CustomerDTO> saveCustomer(@RequestBody CustomerRequest customerRequest) {
+    public ResponseEntity<CustomerDTO> create(@RequestBody CustomerRequest customerRequest) {
 
         var customerDomain = CustomerMapperIn.INSTANCE.customerRequestToCustomer(customerRequest);
-        var customerCreated = customerUseCase.createCustomer(customerDomain);
+        var customerCreated = customerUseCase.create(customerDomain);
         return ResponseEntity.created(getLocationCustomer(customerCreated.getId())).build();
 
     }

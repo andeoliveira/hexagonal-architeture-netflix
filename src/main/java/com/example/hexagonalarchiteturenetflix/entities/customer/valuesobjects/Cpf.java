@@ -1,5 +1,7 @@
 package com.example.hexagonalarchiteturenetflix.entities.customer.valuesobjects;
 
+import com.example.hexagonalarchiteturenetflix.entities.exceptions.InvalidNameException;
+
 import java.util.regex.Pattern;
 
 public class Cpf {
@@ -14,7 +16,7 @@ public class Cpf {
     public Cpf(String cpf) {
 
         if (!valid(cpf)) {
-            throw new IllegalArgumentException();
+            throw new InvalidNameException();
         }
         this.value = cpf;
 

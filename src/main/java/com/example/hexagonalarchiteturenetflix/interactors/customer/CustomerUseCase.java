@@ -14,12 +14,12 @@ public class CustomerUseCase {
         this.customerRepository = customerRepository;
     }
 
-    public Customer createCustomer(Customer customer) {
+    public Customer create(Customer customer) {
         return customerRepository.create(customer);
     }
 
     public Customer getCustomer(Long id) {
         return customerRepository.getCustomer(id).orElseThrow(() -> new CustomerNotFoundException("Cliente não encontrado."));
     }
-    
+
 }

@@ -24,7 +24,7 @@ public class Name implements Comparable<Name> {
         }
 
         if (isInvalid()) {
-            throw new InvalidNameException("Nome inválido.");
+            throw new InvalidNameException();
         }
     }
 

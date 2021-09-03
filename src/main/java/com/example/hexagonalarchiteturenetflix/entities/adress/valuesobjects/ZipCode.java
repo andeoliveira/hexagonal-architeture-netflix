@@ -17,18 +17,21 @@ public class ZipCode {
 
         this.value = value != null ? value : "";
         this.validRegexZipCode();
-        this.isValid();
+        this.Valid();
 
     }
 
-    private void isValid(){
-
+    private void Valid(){
+        boolean valid = true;
+        if(!valid) {
+            throw new InvalidZipCodeException();
+        }
     }
 
     private void validRegexZipCode() {
         Matcher matcher = VALID_ZIPCODE_REGEX.matcher(value);
         if (!matcher.find()) {
-            throw new InvalidZipCodeException("CEP Inválido");
+            throw new InvalidZipCodeException();
         }
     }
 

@@ -34,10 +34,7 @@ public class AdressController {
     }
 
     private URI getLocation(String zipCode) {
-        return ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{zipcode}")
-                .buildAndExpand(zipCode).toUri();
+        return ServletUriComponentsBuilder.fromCurrentRequest().path("/{zipcode}").buildAndExpand(zipCode).toUri();
     }
 
 }

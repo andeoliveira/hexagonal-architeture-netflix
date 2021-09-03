@@ -43,7 +43,7 @@ public class Customer {
         try {
             return LocalDate.parse(birthDate, formatter);
         } catch (RuntimeException e) {
-            throw new InvalidBirthDateException("Data de aniversário inválida.");
+            throw new InvalidBirthDateException();
         }
     }
 
