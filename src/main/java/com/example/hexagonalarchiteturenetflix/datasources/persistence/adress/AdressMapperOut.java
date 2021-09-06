@@ -15,6 +15,7 @@ public interface AdressMapperOut {
 
     @Mapping(target = "street", source = "adress.street")
     @Mapping(target = "zipCode", source = "adress.zipCode")
+    @Mapping(target = "number", source = "adress.number")
     @Mapping(target = "id", ignore = true)
     AdressEntity adressToAdressEntity(Adress adress);
 

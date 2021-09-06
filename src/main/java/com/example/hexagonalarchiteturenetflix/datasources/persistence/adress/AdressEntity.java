@@ -17,6 +17,10 @@ public class AdressEntity {
     @Column(name = "street", nullable = false, length = 60)
     private String street;
 
+    @Column(name = "number", nullable = false)
+    private Integer number;
+
+
     public Long getId() {
         return id;
     }
@@ -39,5 +43,13 @@ public class AdressEntity {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

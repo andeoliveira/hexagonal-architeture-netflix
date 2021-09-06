@@ -19,7 +19,7 @@ public class CustomerUseCase {
     }
 
     public Customer getCustomer(Long id) {
-        return customerRepository.getCustomer(id).orElseThrow(() -> new CustomerNotFoundException("Cliente não encontrado."));
+        return customerRepository.getCustomer(id).orElseThrow(() -> new CustomerNotFoundException());
     }
 
 }

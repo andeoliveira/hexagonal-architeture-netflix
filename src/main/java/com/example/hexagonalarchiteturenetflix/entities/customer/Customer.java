@@ -26,14 +26,14 @@ public class Customer {
 
     private Adress adress;
 
-    public Customer(String firstName, String lastName, String cpf, String birthDate, String zipCode, String street) {
+    public Customer(String firstName, String lastName, String cpf, String birthDate, String zipCode, String street, Integer number) {
 
         this.firstName = new Name(firstName);
         this.lastName = new Name(lastName);
         this.cpf = new Cpf(cpf);
         this.birthDate = this.verifyBirthDate(birthDate);
         this.registerDate = LocalDateTime.now();
-        this.adress = new Adress(zipCode, street);
+        this.adress = new Adress(zipCode, street, number);
 
     }
 
@@ -45,6 +45,7 @@ public class Customer {
         } catch (RuntimeException e) {
             throw new InvalidBirthDateException();
         }
+
     }
 
     public Name getFirstName() {

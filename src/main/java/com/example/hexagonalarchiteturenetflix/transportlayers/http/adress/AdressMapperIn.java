@@ -9,7 +9,7 @@ public interface AdressMapperIn {
 
     AdressMapperIn INSTANCE = Mappers.getMapper(AdressMapperIn.class);
 
-    Adress adressRequestToAdress(AdressRequest adressRequest);
+    Adress adressDTOToAdress(AdressDTO adressDTO);
 
     AdressDTO adressToAdressDTO(Adress adress);
 }

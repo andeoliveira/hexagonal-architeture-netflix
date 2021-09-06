@@ -8,10 +8,13 @@ public class Adress {
 
     private String street;
 
-    public Adress(String zipCode, String street) {
+    private Integer number;
+
+    public Adress(String zipCode, String street, Integer number) {
 
         this.zipCode = new ZipCode(zipCode);
         this.street = street;
+        this.number = number;
 
     }
 
@@ -22,4 +25,9 @@ public class Adress {
     public String getZipCode() {
         return zipCode.getValue();
     }
+
+    public Integer getNumber() {
+        return number;
+    }
+
 }

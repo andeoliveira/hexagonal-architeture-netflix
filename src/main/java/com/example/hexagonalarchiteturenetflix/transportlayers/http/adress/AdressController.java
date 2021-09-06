@@ -26,9 +26,9 @@ public class AdressController {
     }
 
     @PostMapping
-    public ResponseEntity<AdressDTO> create(@RequestBody AdressRequest adressRequest) {
+    public ResponseEntity<AdressDTO> create(@RequestBody AdressDTO adressDTO) {
         var adressCreated = adressUseCase.create(
-                AdressMapperIn.INSTANCE.adressRequestToAdress(adressRequest)
+                AdressMapperIn.INSTANCE.adressDTOToAdress(adressDTO)
         );
         return ResponseEntity.created(getLocation(adressCreated.getZipCode())).build();
     }

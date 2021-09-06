@@ -30,6 +30,7 @@ public class Name implements Comparable<Name> {
 
 
     public boolean isInvalid() {
+
         if (value == null) {
             return true;
         }
