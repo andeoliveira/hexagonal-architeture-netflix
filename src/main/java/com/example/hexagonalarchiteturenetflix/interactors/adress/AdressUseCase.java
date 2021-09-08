@@ -3,7 +3,6 @@ package com.example.hexagonalarchiteturenetflix.interactors.adress;
 import com.example.hexagonalarchiteturenetflix.entities.adress.Adress;
 import com.example.hexagonalarchiteturenetflix.interactors.exceptions.AdressNotFoundException;
 import com.example.hexagonalarchiteturenetflix.repositories.adress.AdressRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
