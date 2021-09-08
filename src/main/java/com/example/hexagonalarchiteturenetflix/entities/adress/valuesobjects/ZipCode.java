@@ -11,7 +11,7 @@ public class ZipCode {
             .compile("^\\d{5}-\\d{3}$",
             Pattern.CASE_INSENSITIVE);
 
-    private String value;
+    private final String value;
 
     public ZipCode(String value) {
 
@@ -22,17 +22,21 @@ public class ZipCode {
     }
 
     private void Valid(){
+
         boolean valid = true;
         if(!valid) {
             throw new InvalidZipCodeException("CEP Inválido");
         }
+
     }
 
     private void validRegexZipCode() {
+
         Matcher matcher = VALID_ZIPCODE_REGEX.matcher(value);
         if (!matcher.find()) {
             throw new InvalidZipCodeException("CEP Inválido.");
         }
+
     }
 
     public String getValue() {
