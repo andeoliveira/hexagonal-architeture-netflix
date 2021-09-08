@@ -1,4 +1,4 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.customer;
+package com.example.hexagonalarchiteturenetflix.datasources.db.customer;
 
 import javax.persistence.*;
 import java.time.LocalDate;

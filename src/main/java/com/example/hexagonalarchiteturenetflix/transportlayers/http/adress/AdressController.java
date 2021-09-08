@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.lang.reflect.Method;
 import java.net.URI;
 
 @RestController()
@@ -15,26 +16,34 @@ public class AdressController {
     @Autowired
     AdressUseCase adressUseCase;
 
-    @GetMapping("/{zipcode}/{street}")
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
     public ResponseEntity<AdressDTO> getAdressByZipCodeAndStreet(
-            @PathVariable String zipcode, @PathVariable String street) {
+            @RequestParam String zipCode, @RequestParam String street) {
+
         return ResponseEntity.ok(
                 AdressMapperIn.INSTANCE.adressToAdressDTO(
-                        adressUseCase.getAdressByZipCodeAndStreet(zipcode, street)
+                        adressUseCase.getAdressByZipCodeAndStreet(zipCode, street)
                 )
         );
+
     }
 
     @PostMapping
     public ResponseEntity<AdressDTO> create(@RequestBody AdressDTO adressDTO) {
+
         var adressCreated = adressUseCase.create(
                 AdressMapperIn.INSTANCE.adressDTOToAdress(adressDTO)
         );
-        return ResponseEntity.created(getLocation(adressCreated.getZipCode())).build();
+        var uri = getLocation(adressCreated.getZipCode(), adressCreated.getStreet());
+        return ResponseEntity.created(uri)
+                .body(AdressMapperIn.INSTANCE.adressToAdressDTO(adressCreated));
+
     }
 
-    private URI getLocation(String zipCode) {
-        return ServletUriComponentsBuilder.fromCurrentRequest().path("/{zipcode}").buildAndExpand(zipCode).toUri();
+    private URI getLocation(String zipCode, String street) {
+        return ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{zipcode}/{street}").buildAndExpand(zipCode, street).toUri();
     }
 
 }

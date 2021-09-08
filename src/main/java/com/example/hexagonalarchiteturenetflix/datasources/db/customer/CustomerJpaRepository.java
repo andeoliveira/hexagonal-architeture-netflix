@@ -1,4 +1,4 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.customer;
+package com.example.hexagonalarchiteturenetflix.datasources.db.customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

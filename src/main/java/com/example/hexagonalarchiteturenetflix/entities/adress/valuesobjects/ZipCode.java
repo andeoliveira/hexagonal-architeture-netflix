@@ -24,14 +24,14 @@ public class ZipCode {
     private void Valid(){
         boolean valid = true;
         if(!valid) {
-            throw new InvalidZipCodeException();
+            throw new InvalidZipCodeException("CEP Inválido");
         }
     }
 
     private void validRegexZipCode() {
         Matcher matcher = VALID_ZIPCODE_REGEX.matcher(value);
         if (!matcher.find()) {
-            throw new InvalidZipCodeException();
+            throw new InvalidZipCodeException("CEP Inválido.");
         }
     }
 

@@ -1,7 +1,7 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.customeradress;
+package com.example.hexagonalarchiteturenetflix.datasources.db.customeradress;
 
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.adress.AdressEntity;
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.customer.CustomerEntity;
+import com.example.hexagonalarchiteturenetflix.datasources.db.adress.AdressEntity;
+import com.example.hexagonalarchiteturenetflix.datasources.db.customer.CustomerEntity;
 
 import javax.persistence.*;
 

@@ -3,6 +3,7 @@ package com.example.hexagonalarchiteturenetflix.interactors.adress;
 import com.example.hexagonalarchiteturenetflix.entities.adress.Adress;
 import com.example.hexagonalarchiteturenetflix.interactors.exceptions.AdressNotFoundException;
 import com.example.hexagonalarchiteturenetflix.repositories.adress.AdressRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,12 +16,15 @@ public class AdressUseCase {
     }
 
     public Adress create(Adress adress) {
-        return this.adressRepository.create(adress);
+
+        adressRepository.create(adress);
+        return adress;
+
     }
 
     public Adress getAdressByZipCodeAndStreet(String zipCode, String street) {
 
-        return this.adressRepository.getAdressByZipCodeAndStreet(zipCode, street)
+        return adressRepository.getAdressByZipCodeAndStreet(zipCode, street)
                 .orElseThrow(() -> new AdressNotFoundException());
 
     }

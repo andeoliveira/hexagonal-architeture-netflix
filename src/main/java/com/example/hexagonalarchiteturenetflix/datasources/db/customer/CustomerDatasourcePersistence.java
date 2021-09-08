@@ -1,17 +1,15 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.customer;
+package com.example.hexagonalarchiteturenetflix.datasources.db.customer;
 
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.adress.AdressEntity;
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.adress.AdressJpaRepository;
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.customeradress.CustomerAdressEntity;
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.customeradress.CustomerAdressJpaRepository;
+import com.example.hexagonalarchiteturenetflix.datasources.db.adress.AdressEntity;
+import com.example.hexagonalarchiteturenetflix.datasources.db.adress.AdressJpaRepository;
+import com.example.hexagonalarchiteturenetflix.datasources.db.customeradress.CustomerAdressEntity;
+import com.example.hexagonalarchiteturenetflix.datasources.db.customeradress.CustomerAdressJpaRepository;
 import com.example.hexagonalarchiteturenetflix.entities.adress.Adress;
 import com.example.hexagonalarchiteturenetflix.entities.customer.Customer;
 import com.example.hexagonalarchiteturenetflix.repositories.customer.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @Service

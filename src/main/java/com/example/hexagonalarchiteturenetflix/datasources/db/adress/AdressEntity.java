@@ -1,4 +1,4 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.adress;
+package com.example.hexagonalarchiteturenetflix.datasources.db.adress;
 
 import javax.persistence.*;
 
@@ -17,7 +17,7 @@ public class AdressEntity {
     @Column(name = "street", nullable = false, length = 60)
     private String street;
 
-    @Column(name = "number", nullable = false)
+    @Column(name = "number", nullable = false, length = 5)
     private Integer number;
 
 

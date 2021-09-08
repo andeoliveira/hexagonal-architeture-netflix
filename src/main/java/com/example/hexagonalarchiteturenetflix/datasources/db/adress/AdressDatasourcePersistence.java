@@ -1,4 +1,4 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.adress;
+package com.example.hexagonalarchiteturenetflix.datasources.db.adress;
 
 import com.example.hexagonalarchiteturenetflix.entities.adress.Adress;
 import com.example.hexagonalarchiteturenetflix.repositories.adress.AdressRepository;

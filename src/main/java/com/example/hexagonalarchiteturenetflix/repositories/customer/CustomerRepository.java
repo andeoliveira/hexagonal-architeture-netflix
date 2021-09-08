@@ -1,6 +1,5 @@
 package com.example.hexagonalarchiteturenetflix.repositories.customer;
 
-import com.example.hexagonalarchiteturenetflix.datasources.persistence.customer.CustomerEntity;
 import com.example.hexagonalarchiteturenetflix.entities.customer.Customer;
 
 import java.util.Optional;

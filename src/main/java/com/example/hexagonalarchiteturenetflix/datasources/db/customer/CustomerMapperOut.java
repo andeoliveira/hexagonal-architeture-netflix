@@ -1,4 +1,4 @@
-package com.example.hexagonalarchiteturenetflix.datasources.persistence.customer;
+package com.example.hexagonalarchiteturenetflix.datasources.db.customer;
 
 import com.example.hexagonalarchiteturenetflix.entities.customer.Customer;
 import org.mapstruct.Mapper;

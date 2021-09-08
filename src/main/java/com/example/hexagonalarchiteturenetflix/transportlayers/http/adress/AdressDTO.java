@@ -6,6 +6,8 @@ public class AdressDTO {
 
     private String street;
 
+    private Integer number;
+
     public String getZipCode() {
         return zipCode;
     }
@@ -20,5 +22,13 @@ public class AdressDTO {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

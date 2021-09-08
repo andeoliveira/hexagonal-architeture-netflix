@@ -36,3 +36,8 @@ databaseChangeLog:
                     nullable: false
                   name: street
                   type: varchar(60)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: number
+                  type: integer(5)
